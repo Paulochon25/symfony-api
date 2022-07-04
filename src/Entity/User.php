@@ -43,6 +43,11 @@ class User
      */
     private $choosen;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $name;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -104,6 +109,18 @@ class User
     public function setChoosen(bool $choosen): self
     {
         $this->choosen = $choosen;
+
+        return $this;
+    }
+
+    public function getName(): ?string
+    {
+        return $this->name;
+    }
+
+    public function setName(string $name): self
+    {
+        $this->name = $name;
 
         return $this;
     }
